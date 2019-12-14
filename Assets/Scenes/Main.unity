@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 15541572}
   - component: {fileID: 15541571}
   - component: {fileID: 15541575}
+  - component: {fileID: 15541576}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -189,8 +190,8 @@ Canvas:
   m_GameObject: {fileID: 15541570}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -235,6 +236,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16bf6149fd33f24419b1c0a36ec6c5b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkText: {fileID: 4900000, guid: d7a2a751d81eac14b8b679cad536a682, type: 3}
+--- !u!114 &15541576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15541570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a80f19725669e4c8f6a5209d59df87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &39030383
@@ -566,7 +580,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1708780437}
   m_HandleRect: {fileID: 1708780436}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2172,7 +2186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 39.21, y: -8.56}
+  m_AnchoredPosition: {x: 39.21, y: -8.560001}
   m_SizeDelta: {x: -114.98, y: -47.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489311006
