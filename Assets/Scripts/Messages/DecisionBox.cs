@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class DecisionBox : MonoBehaviour
 {
@@ -57,6 +58,7 @@ public class DecisionBox : MonoBehaviour
     }
     private IEnumerator NotDecidedAnimation()
     {
+        /* Some com a decisao
         var messageSpace = FindObjectOfType<MessageSpace>().gameObject.GetComponent<RectTransform>();
         float target = CalculateHeight();
         float speed = target / 0.25f;
@@ -68,6 +70,9 @@ public class DecisionBox : MonoBehaviour
             yield return null;
         }
         Destroy(this.gameObject);
+        */
+        gameObject.GetComponent<CanvasGroup>().DOFade(0.5f, 0.5f);
+        yield return null;
     }
 }
 public class Decision

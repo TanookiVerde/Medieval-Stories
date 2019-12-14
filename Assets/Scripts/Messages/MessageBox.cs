@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MessageBox : MonoBehaviour
 {
+    private const float MIN_BOX_SIZE = 80;
     private const float SIZE_PER_LINE = 40;
 
     [SerializeField] private RectTransform frame;
@@ -22,7 +23,7 @@ public class MessageBox : MonoBehaviour
     private float CalculateHeight()
     {
         content.ForceMeshUpdate();
-        return Mathf.Clamp(content.textInfo.lineCount * SIZE_PER_LINE, 70, 600);
+        return Mathf.Clamp(content.textInfo.lineCount * SIZE_PER_LINE, MIN_BOX_SIZE, 600);
     }
     private IEnumerator ReceiveMessageAnimation()
     {

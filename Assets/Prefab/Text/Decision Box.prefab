@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 7397433554907466370}
   - component: {fileID: 1101900980941508871}
   - component: {fileID: 7235137793981544259}
+  - component: {fileID: 6631264316518269717}
   m_Layer: 5
   m_Name: Decision Box
   m_TagString: Untagged
@@ -508,3 +509,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!225 &6631264316518269717
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8278692440162791263}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
