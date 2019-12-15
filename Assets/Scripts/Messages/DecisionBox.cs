@@ -71,7 +71,11 @@ public class DecisionBox : MonoBehaviour
         }
         Destroy(this.gameObject);
         */
-        gameObject.GetComponent<CanvasGroup>().DOFade(0.5f, 0.5f);
+        Color c = frame.GetChild(0).GetComponent<Image>().color;
+        c /= 2f;
+        c.a = 1;
+        frame.GetChild(0).GetComponent<Image>().DOColor(c, 0.5f);
+        //gameObject.GetComponent<CanvasGroup>().DOFade(0.5f, 0.5f);
         yield return null;
     }
 }

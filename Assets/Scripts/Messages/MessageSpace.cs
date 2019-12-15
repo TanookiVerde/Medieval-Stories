@@ -13,6 +13,7 @@ public class MessageSpace : MonoBehaviour
 
     public GameObject messagePrefab;
     public GameObject decisionPrefab;
+    public Transform emptyContent;
 
     public delegate void PlayerAnswer(int index);
     public event PlayerAnswer ReceiveAnswer;
@@ -21,6 +22,7 @@ public class MessageSpace : MonoBehaviour
     {
         currentChoices = new List<Decision>();
         var go = Instantiate(messagePrefab, messageRoot);
+        emptyContent.SetAsLastSibling();
         go.GetComponent<MessageBox>().SetContent(message);
         go.GetComponent<MessageBox>().StartAnimation();
         messageList.Add(message);
@@ -31,6 +33,7 @@ public class MessageSpace : MonoBehaviour
         currentChoices.Add(decision);
         int index = currentChoices.Count - 1;
         var go = Instantiate(decisionPrefab, messageRoot);
+        emptyContent.SetAsLastSibling();
         go.GetComponent<DecisionBox>().SetContent(decision, index);
         go.GetComponent<DecisionBox>().StartAnimation();
         messageRoot.parent.parent.GetComponent<ScrollRect>().DONormalizedPos(Vector2.zero, 0.5f);
