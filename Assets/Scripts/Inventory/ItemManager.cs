@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    [SerializeField]
-    private Dictionary<int, string> items;
-    public Dictionary<int, string> Items { get => items; set => items = value; }
+    public List<GameObject> items;
+    public List<GameObject> playerItems;
 
-    public void AddItem()
+    public void AddItem(string itemName)
     {
-
+        
     }
 }

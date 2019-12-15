@@ -18,11 +18,16 @@ public class DecisionBox : MonoBehaviour
     {
         FindObjectOfType<MessageSpace>().ReceiveAnswer += PlayerAnswered;
     }
+    void OnDestroy()
+    {
+        FindObjectOfType<MessageSpace>().ReceiveAnswer -= PlayerAnswered;
+    }
     public void PlayerAnswered(int index)
     {
+        if(GetComponent<Button>() != null)
         GetComponent<Button>().interactable = false;
         if(index != this.index)
-            StartCoroutine(NotDecidedAnimation());
+            NotDecidedAnimation();
     }
     public void Decide()
     {
@@ -56,7 +61,7 @@ public class DecisionBox : MonoBehaviour
         }
         yield return null;
     }
-    private IEnumerator NotDecidedAnimation()
+    public void NotDecidedAnimation()
     {
         /* Some com a decisao
         var messageSpace = FindObjectOfType<MessageSpace>().gameObject.GetComponent<RectTransform>();
@@ -77,6 +82,8 @@ public class DecisionBox : MonoBehaviour
         frame.GetChild(0).GetComponent<Image>().DOColor(c, 0.5f);
         //gameObject.GetComponent<CanvasGroup>().DOFade(0.5f, 0.5f);
         yield return null;
+        gameObject.GetComponent<CanvasGroup>().DOFade(0.5f, 0.5f);
+        GetComponent<Button>().interactable = false;
     }
 }
 public class Decision
