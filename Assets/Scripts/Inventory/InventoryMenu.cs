@@ -50,13 +50,20 @@ public class InventoryMenu : MonoBehaviour
     }
     private IEnumerator CreateItems()
     {
-        yield return new WaitForSeconds(0.5f);
-        int itemQuantity = 3; //Temp
-        for (int i = 0; i < itemQuantity; i++)
+        var items = FindObjectOfType<ItemManager>().playerItems;
+        var uniqueItems = new Dictionary<ItemData,int>();
+
+        foreach (var i in items)
         {
-            var item = Instantiate(itemPrefab, itemRoot);
-            item.GetComponent<CanvasGroup>().DOFade(0, 0);
-            item.GetComponent<CanvasGroup>().DOFade(1, 1f);
+            if (!uniqueItems.ContainsKey(i))
+                uniqueItems.Add(i, 1);
+            else
+                uniqueItems[i]++;
+        }
+        foreach (var i in uniqueItems)
+        {
+            var item = Instantiate(itemPrefab, itemRoot).GetComponent<ItemBox>();
+            item.SetContent(i.Key,i.Value);
             yield return new WaitForSeconds(0.25f);
         }
     }

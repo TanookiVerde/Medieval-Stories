@@ -18,18 +18,12 @@ public class DecisionBox : MonoBehaviour
     {
         FindObjectOfType<MessageSpace>().ReceiveAnswer += PlayerAnswered;
     }
-    /// <summary>
-    /// This function is called when the MonoBehaviour will be destroyed.
-    /// </summary>
-    void OnDestroy()
-    {
-        FindObjectOfType<MessageSpace>().ReceiveAnswer -= PlayerAnswered;
-    }
     public void PlayerAnswered(int index)
     {
         GetComponent<Button>().interactable = false;
         if(index != this.index)
             NotDecidedAnimation();
+        FindObjectOfType<MessageSpace>().ReceiveAnswer -= PlayerAnswered;
     }
     public void Decide()
     {
@@ -65,25 +59,11 @@ public class DecisionBox : MonoBehaviour
     }
     public void NotDecidedAnimation()
     {
-        /* Some com a decisao
-        var messageSpace = FindObjectOfType<MessageSpace>().gameObject.GetComponent<RectTransform>();
-        float target = CalculateHeight();
-        float speed = target / 0.25f;
-        frame.sizeDelta = new Vector2(frame.sizeDelta.x, target);
-        while (frame.sizeDelta.y > 0)
-        {
-            frame.sizeDelta -= Vector2.up * Time.deltaTime * speed;
-            LayoutRebuilder.ForceRebuildLayoutImmediate(messageSpace);
-            yield return null;
-        }
-        Destroy(this.gameObject);
-        */
         Color c = frame.GetChild(0).GetComponent<Image>().color;
         c /= 2f;
         c.a = 1;
         frame.GetChild(0).GetComponent<Image>().DOColor(c, 0.5f);
         //gameObject.GetComponent<CanvasGroup>().DOFade(0.5f, 0.5f);
-        gameObject.GetComponent<CanvasGroup>().DOFade(0.5f, 0.5f);
         GetComponent<Button>().interactable = false;
     }
 }
