@@ -66,16 +66,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Ficar em sil\xEAncio"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 974ad31888db34748a2aff4cf0806891, type: 2}
-  m_sharedMaterial: {fileID: -5819779346509575224, guid: 974ad31888db34748a2aff4cf0806891,
+  m_fontAsset: {fileID: 11400000, guid: c1ea8c09f16b5c240a4096f37d10a7d2, type: 2}
+  m_sharedMaterial: {fileID: 4397468037815498746, guid: c1ea8c09f16b5c240a4096f37d10a7d2,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283383353
-  m_fontColor: {r: 0.22467962, g: 0.24200785, b: 0.31132078, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d5affd8395bbeb9429ca5581b7fc275d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a04f3d2e5f854a749a23b0dca3220d0a, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 3.51
 --- !u!114 &5124692354651538325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 689162895779407966}
   - component: {fileID: 6847732657589413707}
   m_Layer: 5
-  m_Name: TMP SubMeshUI [Berry Rotunda SDF Material + LiberationSans SDF Atlas]
+  m_Name: TMP SubMeshUI [Bookerly-Regular SDF Material + LiberationSans SDF Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 7397433554907466370}
   - component: {fileID: 1101900980941508871}
   - component: {fileID: 7235137793981544259}
+  - component: {fileID: 6631264316518269717}
   m_Layer: 5
   m_Name: Decision Box
   m_TagString: Untagged
@@ -508,3 +509,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!225 &6631264316518269717
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8278692440162791263}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
