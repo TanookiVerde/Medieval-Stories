@@ -8,4 +8,16 @@ public class MainMenuManager : MonoBehaviour
     {
         FindObjectOfType<OpeningAnimation>().Play();
     }
+    public void Continue()
+    {
+        LoadingScreen.TransiteTo("TextAdventure");
+    }
+    public void NewGame()
+    {
+        LoadingScreen.TransiteTo("TextAdventure");
+    }
+    public void Preferences()
+    {
+
+    }
 }
