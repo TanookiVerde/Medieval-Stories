@@ -19,16 +19,16 @@ public class Test : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Animation());
-        currentMessages = "";
+        currentMessages = PlayerPrefs.GetString(saveFileName);
         FindObjectOfType<MessageSpace>().ReceiveAnswer += ReceiveTest;
     }
     private IEnumerator Animation()
     {
         story = new Story(inkText.text);
-        //while (Next())
-        //{
+        while (Next())
+        {
           yield return null;
-        //}
+        }
     }
     public void ReceiveTest(int index)
     {
@@ -37,23 +37,23 @@ public class Test : MonoBehaviour
         choosing = false;
         Line();
     }
-    public void Next()
+    private bool Next()
     {
         if (story.canContinue)
         {
-            //if (Input.GetButtonDown("Fire1"))
-            //{
+            if (Input.GetButtonDown("Fire1"))
+            {
                 Line();
-            //}
+            }
         }
         else if (story.currentChoices.Count > 0 && !choosing)
         {
             Choice();
         }
-        //else if (!choosing)
-            //return false;
+        else if (!choosing)
+            return false;
 
-        //return true;
+        return true;
     }
     private void Line()
     {
@@ -66,10 +66,6 @@ public class Test : MonoBehaviour
     private void Line(string line)
     {
         FindObjectOfType<MessageSpace>().NewMessage(new Message(line));
-        foreach(DecisionBox d in GameObject.FindObjectsOfType<DecisionBox>())
-        {
-            d.NotDecidedAnimation(); //to do:otimizar
-        }
     }
     private void Choice()
     {
@@ -92,7 +88,6 @@ public class Test : MonoBehaviour
     }
     public void LoadStory()
     {
-        FindObjectOfType<MessageSpace>().Reset();
         StartCoroutine(_LoadStory());
     }
     private IEnumerator _LoadStory()
@@ -123,17 +118,18 @@ public class Test : MonoBehaviour
         {
             if (currentMessages[parseCounter] == '*' || currentMessages[parseCounter] == '$')
             {
+                print("if");
                 Line(message);
                 parseCounter--;
-                FindObjectOfType<MessageSpace>().Reset();
-                yield break;
+                break;
             }
             else
             {
+                print("else");
                 message += currentMessages[parseCounter];
+                print(message);
             }
         }
-        Line(message);
         yield return null;
     }
     private IEnumerator ParseChoice()
@@ -142,18 +138,18 @@ public class Test : MonoBehaviour
         string message = "";
         for (; parseCounter < currentMessages.Length; parseCounter++)
         {
+            print(parseCounter);
             if (currentMessages[parseCounter] == '*' || currentMessages[parseCounter] == '$')
             {
                 Choice(message);
-                parseCounter--; 
-                yield break;
+                parseCounter--;
+                break;
             }
             else
             {
                 message += currentMessages[parseCounter];
             }
         }
-        Choice(message);
         yield return null;
     }
     private void AddMessage(string message, bool type = true) //true = line, false = decision. * special character from line, $ special character for decision
@@ -173,7 +169,6 @@ public class Test : MonoBehaviour
     {
         PlayerPrefs.SetString(saveStateName, "");
         PlayerPrefs.SetString(saveFileName, "");
-        FindObjectOfType<MessageSpace>().Reset();
         currentMessages = "";
         parseCounter = 0;
     }

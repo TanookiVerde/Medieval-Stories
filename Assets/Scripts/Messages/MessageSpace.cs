@@ -43,9 +43,4 @@ public class MessageSpace : MonoBehaviour
     {
         ReceiveAnswer(index);
     }
-    public void Reset()
-    {
-        currentChoices = new List<Decision>();
-        messageList = new List<Message>();
-    }
 }
