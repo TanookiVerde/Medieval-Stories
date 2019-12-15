@@ -6,10 +6,10 @@
     --oi #palhaço
     --quer ler meu livro? #palhaço
     **[sim]
-        ---ta #palhaço #item:11
+        ---ta #palhaço #&MStories
     **[não]
         ---nossa
-        ---toma essa chave #palhaço #item:01
+        ---toma essa chave #palhaço #&AncientKey
 *[tchau palhaço]
     --tchau
 ->END
