@@ -164,7 +164,7 @@ public class Test : MonoBehaviour
     }
     private void AddMessage(string message, bool type = true) //true = line, false = decision. * special character from line, $ special character for decision
     {
-        print("Added: " + message);
+        //print("Added: " + message);
         if(type)
         {
             currentMessages += "*" + message;
@@ -173,7 +173,7 @@ public class Test : MonoBehaviour
         {
             currentMessages += "$" + message;
         }
-        print("Total: " + currentMessages);
+        //print("Total: " + currentMessages);
     }
     public void DeleteSave()
     {
