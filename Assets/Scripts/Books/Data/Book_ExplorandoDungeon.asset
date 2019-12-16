@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f369cada219e36468a7b7cc318ed96d, type: 3}
   m_Name: Book_ExplorandoDungeon
   m_EditorClassIdentifier: 
-  bookCover: {fileID: 21300000, guid: e90296f93073cda408177db3356be717, type: 3}
+  bookCover: {fileID: 21300000, guid: 3ba4e754f5f18f34a92c6d0e135ae267, type: 3}
   bookName: Masmorras sem fim
   authorName: Mary K. Alliston
   inkFile: {fileID: 4900000, guid: d7a2a751d81eac14b8b679cad536a682, type: 3}

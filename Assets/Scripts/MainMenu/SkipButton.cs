@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class SkipButton : MonoBehaviour
 {
-    private const float TIME_TO_SKIP = 2f;
+    private const float TIME_TO_SKIP = 1f;
     private const float DECREASE_TAX = 2f;
 
     [SerializeField] private Image skipIcon;

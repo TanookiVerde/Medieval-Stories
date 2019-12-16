@@ -13,6 +13,8 @@ public class BookBox : MonoBehaviour
     [SerializeField] private TMP_Text title;
     [SerializeField] private TMP_Text author;
 
+    public bool opened;
+
     private void Start()
     {
         SetContent();
@@ -25,7 +27,19 @@ public class BookBox : MonoBehaviour
     }
     public void OpenBook()
     {
-        PlayerPrefs.SetInt("SELECTED_BOOK", library.allBooks.IndexOf(data));
-        LoadingScreen.TransiteTo("TextAdventure");
+        if (!opened)
+        {
+            FindObjectOfType<BookMenu>().SelectBook(this);
+            opened = true;
+        }
+        else
+        {
+            PlayerPrefs.SetInt("SELECTED_BOOK", library.allBooks.IndexOf(data));
+            LoadingScreen.TransiteTo("TextAdventure");
+        }
+    }
+    public void CloseBook()
+    {
+        opened = false;
     }
 }
