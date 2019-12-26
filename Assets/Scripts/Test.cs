@@ -21,6 +21,18 @@ public class Test : MonoBehaviour
         StartCoroutine(Animation());
         currentMessages = "";
         FindObjectOfType<MessageSpace>().ReceiveAnswer += ReceiveTest;
+        HealthManager.InitHUD();
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            HealthManager.TakeDamage(50);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            HealthManager.RecoverHealth(50);
+        }
     }
     private IEnumerator Animation()
     {
