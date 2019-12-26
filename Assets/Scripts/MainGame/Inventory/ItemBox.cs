@@ -30,4 +30,9 @@ public class ItemBox : MonoBehaviour
     {
         return data;
     }
+    public void Action()
+    {
+        FindObjectOfType<InventoryMenu>().OpenDescription();
+        FindObjectOfType<ItemDescriptionMenu>().OpenItemDescription(data);
+    }
 }

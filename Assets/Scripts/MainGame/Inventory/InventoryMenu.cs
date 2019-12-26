@@ -14,6 +14,9 @@ public class InventoryMenu : MonoBehaviour
 
     public GameObject itemPrefab;
 
+    public RectTransform inventory;
+    public RectTransform description;
+
     public void ToggleMenu()
     {
         if (opened)
@@ -24,6 +27,7 @@ public class InventoryMenu : MonoBehaviour
     private void OpenMenu()
     {
         opened = true;
+        OpenInventory();
         GetComponent<CanvasGroup>().DOFade(1, 0.5f);
         GetComponent<CanvasGroup>().interactable = true;
         GetComponent<CanvasGroup>().blocksRaycasts = true;
@@ -66,5 +70,15 @@ public class InventoryMenu : MonoBehaviour
             item.SetContent(i.Key,i.Value);
             yield return new WaitForSeconds(0.25f);
         }
+    }
+    public void OpenInventory()
+    {
+        inventory.DOAnchorPosX(0, 0.25f);
+        description.DOAnchorPosX(720, 0.25f);
+    }
+    public void OpenDescription()
+    {
+        inventory.DOAnchorPosX(-720, 0.25f);
+        description.DOAnchorPosX(0, 0.25f);
     }
 }

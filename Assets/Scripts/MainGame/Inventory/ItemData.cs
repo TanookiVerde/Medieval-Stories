@@ -9,4 +9,9 @@ public class ItemData : ScriptableObject
     public string title;
     public string description;
     public int max;
+    public ItemType itemType;
+}
+public enum ItemType
+{
+    RECOVERY, DESCRIPTION
 }
