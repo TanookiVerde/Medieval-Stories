@@ -34,7 +34,7 @@ public class ItemManager : MonoBehaviour
         string s = "";
         foreach(ItemData i in playerItems)
         {
-            s += i.title + ",";
+            s += i.inkTag + ",";
         }
         PlayerPrefs.SetString(playerInventoryName, s);
     }
@@ -49,17 +49,18 @@ public class ItemManager : MonoBehaviour
         int counter = 0;
         foreach(ItemData id in idb.allItems)
         {
-            if(id.title == itemName)
+            if(id.inkTag == itemName)
             {
                 foreach(ItemData idp in playerItems)
                 {
-                    if(idp.title == itemName)
+                    if(idp.inkTag == itemName)
                         counter++;
                 }
                 if(counter < id.max)
                 {
                     playerItems.Add(id);
-                    print("Added Item: " + id.title);
+                    print("Added Item: " + id.inkTag);
+                    FindObjectOfType<NewItemPanel>().Show(id);
                 }
                 counter = 0;
             }

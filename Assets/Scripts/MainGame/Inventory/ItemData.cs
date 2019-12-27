@@ -5,8 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Custom/ItemData")]
 public class ItemData : ScriptableObject
 {
-    public Sprite icon;
+    public string inkTag;
     public string title;
+
+    public Sprite icon;
     public string description;
     public int max;
     public ItemType itemType;

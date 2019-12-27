@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02b164a55f59f34db65f265caa514a0, type: 3}
   m_Name: MStories
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  title: MStories
-  description: 
+  inkTag: MSStories
+  title: Item de Teste
+  icon: {fileID: 21300000, guid: 0d6dfe816148b9f4f937dd50ca21516f, type: 3}
+  description: "Descri\xE7\xE3o de Teste"
   max: 1
+  itemType: 0
+  recoveryAmount: 10

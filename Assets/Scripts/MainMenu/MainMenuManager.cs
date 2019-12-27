@@ -14,7 +14,15 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
-        FindObjectOfType<OpeningAnimation>().Play();
+        if (PlayerPrefs.GetInt("skipMenuIntro", 0) == 0)
+        {
+            FindObjectOfType<OpeningAnimation>().Play();
+            PlayerPrefs.SetInt("skipMenuIntro", 0);
+        }
+        else
+        {
+            LoadingScreen.TransiteFrom();
+        }
         Camera.main.transform.DOMove(mainMenu.position, 0);
         Camera.main.DOOrthoSize(MAIN_ZOOM, 0);
     }
