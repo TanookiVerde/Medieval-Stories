@@ -65,4 +65,8 @@ public class ItemManager : MonoBehaviour
             }
         }
     }
+    public void RemoveItem(string itemName)
+    {
+        //ToDo
+    }
 }

@@ -104,9 +104,16 @@ public class Test : MonoBehaviour
     }
     public void SaveStory()
     {
+        StartCoroutine(SaveStoryAnimation());
+    }
+    private IEnumerator SaveStoryAnimation()
+    {
+        FindObjectOfType<Saving>().Open();
         PlayerPrefs.SetString(saveFileName, currentMessages);
         PlayerPrefs.SetString(saveStateName, story.state.ToJson());
         FindObjectOfType<ItemManager>().SavePlayerItems();
+        yield return new WaitForSeconds(0.5f);
+        FindObjectOfType<Saving>().Close();
     }
     public void LoadStory()
     {

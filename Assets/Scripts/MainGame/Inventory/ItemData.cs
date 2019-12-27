@@ -10,6 +10,9 @@ public class ItemData : ScriptableObject
     public string description;
     public int max;
     public ItemType itemType;
+
+    //Se for do tipo recoveryHealth
+    public int recoveryAmount;
 }
 public enum ItemType
 {

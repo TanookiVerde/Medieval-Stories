@@ -1866,6 +1866,7 @@ GameObject:
   - component: {fileID: 593120159}
   - component: {fileID: 593120158}
   - component: {fileID: 593120160}
+  - component: {fileID: 593120161}
   m_Layer: 5
   m_Name: Saving
   m_TagString: Untagged
@@ -1942,6 +1943,19 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &593120161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593120156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba46152e52bff94392718da98ae2f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  group: {fileID: 593120160}
 --- !u!1 &618978329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2285,6 +2299,7 @@ MonoBehaviour:
   description: {fileID: 331157079}
   useButton: {fileID: 1352797911}
   group: {fileID: 0}
+  data: {fileID: 0}
 --- !u!114 &794716070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2508,7 +2523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 697.0704}
+  m_AnchoredPosition: {x: 0, y: 764.566}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &877045474
@@ -4563,8 +4578,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ToggleMenu
+      - m_Target: {fileID: 794716068}
+        m_MethodName: UseItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
