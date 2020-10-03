@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MessageBox : MonoBehaviour
 {
-    private const float MIN_BOX_SIZE = 80;
+    private const float MIN_BOX_SIZE = 120;
     private const float SIZE_PER_LINE = 40;
 
     [SerializeField] private RectTransform frame;

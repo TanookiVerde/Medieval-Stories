@@ -41,7 +41,7 @@ public class DecisionBox : MonoBehaviour
     private float CalculateHeight()
     {
         content.ForceMeshUpdate();
-        return Mathf.Clamp(content.textInfo.lineCount * SIZE_PER_LINE, 70, 600);
+        return Mathf.Clamp(content.textInfo.lineCount * SIZE_PER_LINE, 120, 600);
     }
     private IEnumerator ReceiveDecisionAnimation()
     {
